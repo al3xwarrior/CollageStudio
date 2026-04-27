@@ -1,39 +1,12 @@
 import { escapeHtml } from '../utils/html.js';
 
-const demoCardsMarkup = `
-  <article class="image-card demo-card">
-    <div class="demo-preview demo-preview-one"></div>
-    <div class="card-actions">
-      <button class="icon-button" type="button" aria-label="Crop demo image">Crop</button>
-      <button class="icon-button danger" type="button" aria-label="Remove demo image">X</button>
-    </div>
-    <p>city-light.jpg</p>
-  </article>
-  <article class="image-card demo-card">
-    <div class="demo-preview demo-preview-two"></div>
-    <div class="card-actions">
-      <button class="icon-button" type="button" aria-label="Crop demo image">Crop</button>
-      <button class="icon-button danger" type="button" aria-label="Remove demo image">X</button>
-    </div>
-    <p>gallery-wall.jpg</p>
-  </article>
-  <article class="image-card demo-card">
-    <div class="demo-preview demo-preview-three"></div>
-    <div class="card-actions">
-      <button class="icon-button" type="button" aria-label="Crop demo image">Crop</button>
-      <button class="icon-button danger" type="button" aria-label="Remove demo image">X</button>
-    </div>
-    <p>weekend-trip.jpg</p>
-  </article>
-`;
-
 export function createImageGrid(elements, callbacks) {
   function render(images) {
     elements.imageCount.textContent = `${images.length} selected`;
     elements.regenerateButton.disabled = images.length === 0;
 
     if (images.length === 0) {
-      elements.imageGrid.innerHTML = demoCardsMarkup;
+      elements.imageGrid.innerHTML = '';
       return;
     }
 
